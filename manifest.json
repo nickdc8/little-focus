@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Little Focus",
+  "version": "1.0.0",
+  "description": "A little time for what matters. A simple Pomodoro focus timer with breaks and desktop notifications.",
+  "minimum_chrome_version": "120",
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm3fmbulrI+jREmdm5jPmGTU4agWrGtOBrVBF6rL5MO9eTIzxc3dBMA10MYyD/0A4oxXUz0qOAjOcAuoNlWiLbCWjq4KaLP/AnXn7FDtJRJ9/IRYNO2oaiifeZFntMo5bWGH0woLm3KEM0Af5mbKEsc/WpHjJlsIuiiGuddpOiUqsmpH3pQQdkWuP3UPHDBhhRd3buTRFy/gkqVHd8fNb7BPjoCszBo4CQ5wT97CaKA7DadR8DRE7RUQWmqWx9kehbL9mOJBeFIJMZBtWrHJFN19wewJMueveKopk5vLGdr3h15oE0mnCxB56I9bm9LViWHJ45HUEAODmU1bKT4pxrwIDAQAB",
+  "action": {
+    "default_title": "Little Focus",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}

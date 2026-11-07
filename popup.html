@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Little Focus</title><link rel="icon" href="icons/icon-32.png">
+  <link rel="stylesheet" href="popup.css"><script type="module" src="popup.js"></script>
+</head>
+<body><div class="app">
+  <header><div class="heading"><h1>Little Focus</h1><button id="expand" class="icon-button" aria-label="Open in a tab" title="Open in a tab"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9M10 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5"/></svg></button></div><p>A little time for what matters.</p></header>
+  <nav aria-label="Timer mode"><button data-mode="focus" aria-pressed="true" disabled>Focus</button><button data-mode="short" aria-pressed="false" disabled>Short break</button><button data-mode="long" aria-pressed="false" disabled>Long break</button></nav>
+  <main>
+    <p id="phase">Ready to focus</p>
+    <div id="clock" role="timer" aria-label="Time remaining" aria-live="off">25:00</div>
+    <p id="hint" role="status" aria-live="polite">One thing at a time.</p>
+    <div class="controls"><button id="toggle" class="primary" disabled>Start focus</button><button id="reset" class="secondary" disabled>Reset</button></div>
+    <div class="sessions"><div id="dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div><p id="cycle">Long break after 4 focus sessions</p></div>
+  </main>
+  <p id="status" role="status" aria-live="polite"></p><button id="retry" hidden>Retry</button>
+  <footer><span id="today">0 focus sessions today</span><button id="settings-toggle" aria-expanded="false" aria-controls="settings">Timer settings</button></footer>
+  <section id="settings" hidden><form id="settings-form">
+    <h2>Make time your own.</h2><p class="setting-help">Durations in minutes. Reset the timer to change them.</p>
+    <div class="duration-fields"><label>Focus<input id="focus-minutes" type="number" min="1" max="120" step="1" value="25" required></label><label>Short break<input id="short-minutes" type="number" min="1" max="120" step="1" value="5" required></label><label>Long break<input id="long-minutes" type="number" min="1" max="120" step="1" value="15" required></label></div>
+    <button id="save-settings" class="secondary" type="submit" disabled>Save durations</button>
+    <p class="setting-help">Breaks start when you’re ready. A desktop notification marks the end of each timer. Allow Chrome notifications in your system settings.</p>
+  </form></section>
+</div></body></html>
